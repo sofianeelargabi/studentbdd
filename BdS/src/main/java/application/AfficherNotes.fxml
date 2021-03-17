@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="970.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ControllerAfficherNotes">
+	<top>
+		<MenuBar fx:id="barMenu" prefHeight="40.0" prefWidth="970.0" BorderPane.alignment="CENTER">
+			<menus>
+				<Menu mnemonicParsing="false" text="Etudiants">
+					<items>
+						<MenuItem mnemonicParsing="false" onAction="#onAjoutClickEtudiant" text="Ajouter étudiant">
+                     <graphic>
+                        <ImageView>
+                           <image>
+                              <Image url="@plus%20icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+						</MenuItem>
+						<SeparatorMenuItem mnemonicParsing="false" />
+						<MenuItem mnemonicParsing="false" onAction="#onShowListClick" text="Consulter liste étudiants">
+                     <graphic>
+                        <ImageView>
+                           <image>
+                              <Image url="@list%20icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+						</MenuItem>
+						<SeparatorMenuItem mnemonicParsing="false" />
+						<MenuItem mnemonicParsing="false" onAction="#onclickSubMenuClose" text="Fermer" />
+					</items>
+				</Menu>
+				<Menu mnemonicParsing="false" text="Aide">
+					<items>
+						<MenuItem mnemonicParsing="false" onAction="#onShowHelp" text="A propos de" />
+					</items>
+				</Menu>
+			</menus>
+		</MenuBar>
+	</top>
+   <center>
+		<AnchorPane fx:id="centerPane" nodeOrientation="LEFT_TO_RIGHT" prefHeight="600.0" prefWidth="863.0" BorderPane.alignment="CENTER">
+			<children>
+            <Button layoutX="861.0" layoutY="1.0" mnemonicParsing="false" onAction="#onBtnLogout" prefHeight="31.0" prefWidth="108.0" text="Déconnexion" />
+            <ChoiceBox fx:id="choiceBox" layoutX="14.0" layoutY="71.0" prefHeight="31.0" prefWidth="169.0" />
+            <Label fx:id="labelMoy" layoutY="499.0" prefHeight="87.0" prefWidth="970.0" style="-fx-background-color: #eae8e8;">
+               <font>
+                  <Font size="29.0" />
+               </font>
+            </Label>
+            <ListView fx:id="listView" layoutX="14.0" layoutY="172.0" prefHeight="319.0" prefWidth="148.0" />
+            <Box layoutX="692.0" layoutY="251.0" />
+            <ImageView fx:id="img" fitHeight="178.0" fitWidth="248.0" layoutX="605.0" layoutY="109.0" pickOnBounds="true" preserveRatio="true" />
+            <TextField fx:id="nom" editable="false" layoutX="634.0" layoutY="300.0" />
+            <TextField fx:id="prenom" editable="false" layoutX="634.0" layoutY="353.0" />
+            <TextField fx:id="dateNaiss" editable="false" layoutX="634.0" layoutY="403.0" />
+            <Label fx:id="label1" layoutX="206.0" layoutY="76.0" prefHeight="21.0" prefWidth="113.0" />
+            <ListView fx:id="listDate" layoutX="162.0" layoutY="172.0" prefHeight="319.0" prefWidth="162.0" />
+            <Label layoutX="71.0" layoutY="145.0" text="Note" />
+            <Label layoutX="226.0" layoutY="145.0" text="Date" />
+			</children>
+		</AnchorPane>
+   </center>
+</BorderPane>

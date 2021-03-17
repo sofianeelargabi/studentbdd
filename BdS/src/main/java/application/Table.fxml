@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="970.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ControllerList">
+	<top>
+		<MenuBar fx:id="barMenu" prefHeight="40.0" prefWidth="970.0" BorderPane.alignment="CENTER">
+			<menus>
+				<Menu mnemonicParsing="false" text="Etudiants">
+					<items>
+						<MenuItem mnemonicParsing="false" onAction="#onAjoutClickEtudiant" text="Ajouter étudiant">
+                     <graphic>
+                        <ImageView>
+                           <image>
+                              <Image url="@plus%20icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+						</MenuItem>
+						<SeparatorMenuItem mnemonicParsing="false" />
+						<MenuItem mnemonicParsing="false" onAction="#onShowListClick" text="Consulter liste étudiants">
+                     <graphic>
+                        <ImageView>
+                           <image>
+                              <Image url="@list%20icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+						</MenuItem>
+						<SeparatorMenuItem mnemonicParsing="false" />
+						<MenuItem mnemonicParsing="false" onAction="#onclickSubMenuClose" text="Fermer" />
+					</items>
+				</Menu>
+				<Menu mnemonicParsing="false" text="Aide">
+					<items>
+						<MenuItem mnemonicParsing="false" onAction="#onShowHelp" text="A propos de" />
+					</items>
+				</Menu>
+			</menus>
+		</MenuBar>
+	</top>
+   <center>
+		<AnchorPane fx:id="centerPane" prefHeight="600.0" prefWidth="863.0" BorderPane.alignment="CENTER">
+			<children>
+				<TableView fx:id="table" layoutX="3.0" layoutY="118.0" prefHeight="431.0" prefWidth="964.0" AnchorPane.bottomAnchor="59.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="118.0">
+					<columns>
+						<TableColumn fx:id="colId" prefWidth="142.0" resizable="false" text="ID" />
+						<TableColumn fx:id="colNom" prefWidth="177.0" resizable="false" text="Nom" />
+						<TableColumn fx:id="colPrenom" prefWidth="144.0" resizable="false" text="Prenom" />
+						<TableColumn fx:id="colDate" prefWidth="213.0" resizable="false" text="Date de naissance" />
+                  <TableColumn fx:id="colNotes" prefWidth="185.0" text="Notes" />
+					</columns>
+				</TableView>
+            <Button layoutX="861.0" layoutY="4.0" mnemonicParsing="false" onAction="#onBtnLogout" prefHeight="31.0" prefWidth="108.0" text="Déconnexion" />
+            <ChoiceBox fx:id="choiceBox" layoutX="323.0" layoutY="56.0" prefWidth="150.0" />
+            <TextField fx:id="searchBar" layoutX="485.0" layoutY="57.0" />
+			</children>
+		</AnchorPane>
+   </center>
+</BorderPane>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="970.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ControllerInscription">
+	<top>
+		<MenuBar fx:id="barMenu" prefHeight="37.0" prefWidth="638.0" BorderPane.alignment="CENTER">
+			<menus>
+				<Menu mnemonicParsing="false" text="Etudiants">
+					<items>
+						<MenuItem fx:id="addMenu" disable="true" mnemonicParsing="false" text="Ajouter Etudiant" />
+						<SeparatorMenuItem mnemonicParsing="false" />
+						<MenuItem fx:id="listMenu" disable="true" mnemonicParsing="false" text="Consulter liste étudiants" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+						<MenuItem id="closeWindow" fx:id="closeMenu" mnemonicParsing="false" onAction="#onclickSubMenuClose" text="Fermer" />
+					</items>
+				</Menu>
+            <Menu mnemonicParsing="false" text="Aide">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#onShowHelp" text="A propos de" />
+               </items>
+            </Menu>
+			</menus>
+		</MenuBar>
+	</top>
+   <center>
+      <AnchorPane fx:id="centerPane" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="inscriptionButton" layoutX="455.0" layoutY="501.0" mnemonicParsing="false" onAction="#onBtnInscriptionClick" text="Inscription" />
+            <Label layoutX="274.0" layoutY="317.0" prefHeight="30.0" prefWidth="71.0" text="Login">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="274.0" layoutY="382.0" text="Mot de passe">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <TextField fx:id="login" layoutX="418.0" layoutY="317.0">
+               <effect>
+                  <DropShadow height="5.45" radius="3.7800000000000002" width="11.67" />
+               </effect></TextField>
+            <Label layoutX="358.0" layoutY="47.0" prefHeight="31.0" prefWidth="333.0" text="Bienvenue sur le portail de l'école">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="mdp" layoutX="418.0" layoutY="381.0">
+               <effect>
+                  <DropShadow height="8.56" radius="4.5575" width="11.67" />
+               </effect></PasswordField>
+            <Label layoutX="274.0" layoutY="138.0" text="Nom">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="274.0" layoutY="197.0" text="Prenom">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="274.0" layoutY="255.0" text="Naissance">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <TextField fx:id="prenom" layoutX="418.0" layoutY="192.0">
+               <effect>
+                  <DropShadow height="8.56" radius="4.5575" width="11.67" />
+               </effect>
+            </TextField>
+            <TextField fx:id="nom" layoutX="418.0" layoutY="133.0">
+               <effect>
+                  <DropShadow height="8.56" radius="4.5575" width="11.67" />
+               </effect>
+            </TextField>
+            <DatePicker fx:id="date" layoutX="416.0" layoutY="255.0" prefHeight="31.0" prefWidth="192.0">
+               <effect>
+                  <DropShadow height="8.56" radius="4.5575" width="11.67" />
+               </effect>
+            </DatePicker>
+            <Label layoutX="271.0" layoutY="445.0" prefHeight="30.0" prefWidth="128.0" text="Confirmation ">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="confirm" layoutX="418.0" layoutY="445.0">
+               <effect>
+                  <DropShadow height="8.56" radius="4.5575" width="11.67" />
+               </effect>
+            </PasswordField>
+            <Button fx:id="connexion" layoutX="878.0" layoutY="2.0" mnemonicParsing="false" onAction="#onConnex" text="Connexion" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

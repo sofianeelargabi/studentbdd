@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="975.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ControllerModif">
+   <top>
+      <MenuBar prefHeight="43.0" prefWidth="975.0" BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Etudiants">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#onAjoutClickEtudiant" text="Ajouter étudiant">
+                     <graphic>
+                        <ImageView>
+                           <image>
+                              <Image url="@plus%20icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></MenuItem>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#onShowListClick" text="Consulter liste étudiants">
+                     <graphic>
+                        <ImageView>
+                           <image>
+                              <Image url="@list%20icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></MenuItem>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#onclickSubMenuClose" text="Fermer" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Aide">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#onShowHelp" text="A propos de " />
+            </items>
+          </Menu>
+        </menus>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </MenuBar>
+   </top>
+   <bottom>
+      <AnchorPane fx:id="centerPane" prefHeight="608.0" prefWidth="976.0" BorderPane.alignment="CENTER">
+         <children>
+            <DatePicker fx:id="dateText" editable="false" layoutX="471.0" layoutY="327.0" prefHeight="0.0" prefWidth="50.0" />
+            <TextField fx:id="url" editable="false" layoutX="645.0" layoutY="386.0" />
+            <TextField fx:id="tprenom" disable="true" layoutX="320.0" layoutY="260.0" prefHeight="31.0" prefWidth="176.0" />
+            <TextField fx:id="tnom" disable="true" layoutX="319.0" layoutY="180.0" prefHeight="31.0" prefWidth="177.0" />
+            <ImageView fx:id="tphoto" disable="true" fitHeight="199.0" fitWidth="233.0" layoutX="622.0" layoutY="218.0" pickOnBounds="true" preserveRatio="true" />
+            <Label layoutX="113.0" layoutY="329.0" text="Date de naissance">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <Label layoutX="113.0" layoutY="248.0" text="Prenom">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <Label layoutX="113.0" layoutY="182.0" text="Nom">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <Label layoutX="383.0" layoutY="75.0" prefHeight="35.0" prefWidth="206.0" text="Modification étudiant">
+               <font>
+                  <Font size="21.0" />
+               </font></Label>
+            <Button fx:id="modify" layoutX="394.0" layoutY="493.0" mnemonicParsing="false" text="Modifier" />
+            <TextField fx:id="dateField" disable="true" editable="false" layoutX="321.0" layoutY="325.0" prefHeight="34.0" prefWidth="175.0" />
+            <Button fx:id="parcour" layoutX="698.0" layoutY="178.0" mnemonicParsing="false" onAction="#getTheUserFilePath" text="Parcourir" />
+            <Button fx:id="cancel" layoutX="532.0" layoutY="493.0" mnemonicParsing="false" onAction="#onShowListClick" text="Annuler" />
+            <Button layoutX="865.0" layoutY="1.0" mnemonicParsing="false" onAction="#onBtnLogout" prefHeight="31.0" prefWidth="109.0" text="Déconnexion" />
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </AnchorPane>
+   </bottom>
+</BorderPane>

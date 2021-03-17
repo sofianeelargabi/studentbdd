@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="970.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ControllerAjoutNotes">
+   <top>
+      <MenuBar fx:id="barMenu" BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Etudiants">
+            <items>
+                  <MenuItem fx:id="addMenu" mnemonicParsing="false" onAction="#onAjoutClickEtudiant" text="Ajouter étudiant">
+                     <graphic>
+                        <ImageView>
+                           <image>
+                              <Image url="@plus%20icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></MenuItem>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem fx:id="listMenu" mnemonicParsing="false" onAction="#onShowListClick" text="Consulter liste étudiants">
+                     <graphic>
+                        <ImageView>
+                           <image>
+                              <Image url="@list%20icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></MenuItem>
+                  <SeparatorMenuItem fx:id="closeMenu" mnemonicParsing="false" />
+              <MenuItem mnemonicParsing="false" onAction="#onclickSubMenuClose" text="Fermer" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Aide">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#onShowHelp" text="A propos de" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <AnchorPane fx:id="centerPane" prefHeight="608.0" prefWidth="975.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="nom" layoutX="621.0" layoutY="301.0" />
+            <TextField fx:id="prenom" layoutX="621.0" layoutY="355.0" />
+            <Button fx:id="add" layoutX="145.0" layoutY="505.0" mnemonicParsing="false" onAction="#onBtnAjout" prefHeight="31.0" prefWidth="99.0" text="Ajouter" />
+            <Button layoutX="860.0" layoutY="1.0" mnemonicParsing="false" onAction="#onBtnLogout" prefHeight="31.0" prefWidth="109.0" text="Déconnexion" />
+            <ImageView fx:id="tphoto" fitHeight="178.0" fitWidth="248.0" layoutX="591.0" layoutY="109.0" pickOnBounds="true" preserveRatio="true" />
+            <ChoiceBox fx:id="choiceBox" layoutX="14.0" layoutY="71.0" prefHeight="31.0" prefWidth="161.0" />
+            <TextField fx:id="textNotes" layoutX="186.0" layoutY="71.0" />
+            <TextField fx:id="dateField" layoutX="621.0" layoutY="407.0" />
+            <ListView fx:id="listView" layoutX="14.0" layoutY="109.0" prefHeight="382.0" prefWidth="360.0" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
